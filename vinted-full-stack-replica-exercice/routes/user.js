@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const uploadToCloudinaryAngGetUrl = require("../utils/cloudinary");
+const fileUpload = require("express-fileupload");
 const uid2 = require("uid2");
 const encBase64 = require("crypto-js/enc-base64");
 const SHA256 = require("crypto-js/sha256");
@@ -8,7 +10,7 @@ const emailRegex = /^[\w\-\.]+@[\w-]+\.+[\w-]{2,9}$/;
 const User = require("../models/User");
 
 // Display availabilities for a given day
-router.post("/user/signup", async (req, res) => {
+router.post("/user/signup", fileUpload(), async (req, res) => {
   try {
     const { username, email, password, newsletter } = req.body;
     if (!username) {
@@ -26,11 +28,19 @@ router.post("/user/signup", async (req, res) => {
       return;
     }
     let salt = generateSalt();
-    const newUser = await User({
+    let secure_url;
+    if (req.files.avatar) {
+      secure_url = await uploadToCloudinaryAngGetUrl(req.files.avatar, {
+        folder: `vinted/avatars/`,
+      });
+    }
+    const newUser = new User({
       email: email,
       account: {
         username: username,
-        //  avatar: Object, // nous verrons plus tard comment uploader une image
+        avatar: {
+          secure_url: secure_url,
+        },
       },
       newsletter: newsletter,
       token: generateToken(),

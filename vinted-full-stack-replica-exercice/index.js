@@ -5,7 +5,9 @@ app.use(express.json());
 mongoose.connect("mongodb://127.0.0.1:27017/Vinted"); // replace MyCluster
 
 const userRoutes = require("./routes/user");
+const offerRoutes = require("./routes/offer");
 app.use(userRoutes);
+app.use(offerRoutes);
 
 // Welcome Route
 app.get("/", (req, res) => {
