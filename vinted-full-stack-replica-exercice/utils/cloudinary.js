@@ -4,7 +4,7 @@ const convertToBase64 = require("../utils/convert");
 cloudinary.config({
   cloud_name: "dzfqscodm",
   api_key: "914797663638773",
-  api_secret: "5CQRFjjg5aS0DIr2kdXJ3PKGuFc",
+  api_secret: process.env.REACT_APP_OPENAI_API_KEY,
 });
 
 const uploadToCloudinaryAndGetUrl = async (buffer, options) => {
