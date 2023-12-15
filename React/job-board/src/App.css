@@ -1,42 +1,61 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  background-color: white;
+  color: black;
+}
+
+.header {
+  background-color: black;
+  color: white;
+  height: 24px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.main,
+.header,
+.footer {
+  margin: 0 auto;
+  width: 1024px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.jobs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px 157px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.job-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  border: 5px solid;
+  margin-bottom: 10px;
 }
 
-.card {
-  padding: 2em;
+.red {
+  border-color: red;
+}
+.yellow {
+  border-color: yellow;
+}
+.green {
+  border-color: green;
+}
+.blue {
+  border-color: blue;
+}
+.salmon {
+  border-color: salmon;
 }
 
-.read-the-docs {
-  color: #888;
+.footer {
+  background-color: grey;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

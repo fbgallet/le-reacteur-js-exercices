@@ -1,5 +1,5 @@
 function Title(props) {
-  return <></>;
+  return <>{props.title}</>;
 }
 
 export default Title;
