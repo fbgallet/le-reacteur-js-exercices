@@ -1,42 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap");
+
 #root {
-  max-width: 1280px;
+  max-width: 1024px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  font-size: 36px;
+  font-weight: 200;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+  background-color: black;
+  color: white;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.user {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  align-items: center;
+  font-size: 24px;
+}
+.user > div:last-child {
+  padding: 10px;
+  background-color: #eceff1;
+  border-radius: 50%;
+  color: black;
 }
 
-.card {
-  padding: 2em;
+body {
+  background-color: #eceff1;
+  font-family: "Montserrat", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
 }
 
-.read-the-docs {
-  color: #888;
+.main {
+  padding: 30px 0;
+}
+
+.blue-bg {
+  background-color: #1a75d2;
+}
+.red-bg {
+  background-color: #c2175b;
+}
+.white-bg {
+  background-color: white;
+}
+.grey-bg {
+  background-color: #f7f7f7;
+}
+
+.account {
+  margin-bottom: 40px;
+}
+.account-title {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1px;
+}
+.value {
+  font-family: "Roboto Mono", monospace;
+}
+.operations {
+  padding: 0 15px;
+}
+.line {
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.line > div {
+  padding: 0 15px;
+}
+.line > div:nth-child(2) {
+  flex: 1;
+}
+.line > .value {
+  text-align: end;
+}
+.btn-more {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+.btn-more > div {
+  background-color: white;
+  color: grey;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: small;
+  cursor: pointer;
 }
